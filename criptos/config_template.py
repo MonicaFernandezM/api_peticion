@@ -1,0 +1,1 @@
+API_KEY = "Tu api key aui " #esto es asi porque el apikey es una informacion sensible

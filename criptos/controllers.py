@@ -1,4 +1,4 @@
-from criptos.models import CriptoValorModel
+from criptos.models import CriptoValorModel, APIError
 from criptos.view import CriptoValorView
 
 class CriptoValorController():
@@ -10,6 +10,8 @@ class CriptoValorController():
         self.vista.pedir()
         self.modelo.origen = self.vista.origen
         self.modelo.destino = self.vista.destino
-        #try, except para que utilice la vista de que se ponte un error en la APIKe
-        self.modelo.obtener_tasa()
-        self.vista.mostrar(self.modelo.tasa)
+        try:
+            self.modelo.obtener_tasa()
+            self.vista.mostrar(self.modelo.tasa)
+        except APIError as e:
+            self.vista.mostrar_error(e.args[0]) #porque esta en forma de tupla en models
