@@ -3,7 +3,7 @@ from criptos import API_KEY, URL_TASA_ESPECIFICA #el punto sustituye la palabra 
 from criptos.errors import APIError
 
 class CriptoValorModel:
-    def __init__(self, origen: str, destino: str):
+    def __init__(self, origen = "", destino = ""):
         self.origen = origen 
         self.destino = destino 
 

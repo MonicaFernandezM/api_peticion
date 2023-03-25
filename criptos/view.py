@@ -23,3 +23,6 @@ class CriptoValorView():
             destino = input("Moneda a convertir: ") 
 
         self.destino = destino
+
+    def mostrar(self, tasa):
+        print("1 {} son {:.2f} {}".format(self.origen, tasa, self.destino))
